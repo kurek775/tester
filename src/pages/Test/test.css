@@ -1,0 +1,38 @@
+.test-page {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.question-wrapper {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0 2rem;
+}
+
+.header-wrapper {
+    padding: 1.5rem 2rem;
+    color: white;
+}
+
+.header-wrapper div {
+    padding: 1rem;
+    margin: 0;
+    background: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-wrapper h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
+.explanation-wrapper {
+    padding: 0 2rem;
+    padding-top: 1.5rem;
+}
+
+.test-question {
+    flex: 3;
+    height: 100%;
+}

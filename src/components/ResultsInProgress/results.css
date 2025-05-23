@@ -1,0 +1,60 @@
+.results-panel {
+    background: #1e1e1e;
+    color: white;
+    padding: 1rem;
+    font-family: sans-serif;
+    height: 100%;
+}
+
+.results-header {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.percentage {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.count {
+    margin-top: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.correct {
+    color: #4caf50;
+}
+
+.incorrect {
+    color: #f44336;
+}
+
+.squares {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 15px;
+    justify-items: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #bbbaba;
+}
+
+.dot.selected {
+    background: #ffffff;
+}
+
+.dot.correct {
+    background: #4caf50;
+}
+
+.dot.incorrect {
+    background: #f44336;
+}
+
+.dot.unanswered {
+    background: #bebdbd;
+}
