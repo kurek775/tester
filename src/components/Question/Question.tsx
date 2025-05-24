@@ -4,8 +4,10 @@ import type { Question } from "../../models/Question.model";
 import { Button, Form } from "react-bootstrap";
 import "./question.css";
 import { TextContent } from "../../lang/TextContent";
+import { saveInProgressTestResults } from "../utils/LocalStorage.utils";
 
 interface Props {
+  code: string;
   question: Question;
   onNext?: () => void;
   onAnswerResult?: (isCorrect: boolean) => void;
@@ -13,6 +15,7 @@ interface Props {
 }
 
 const QuestionComponent: React.FC<Props> = ({
+  code,
   question,
   onNext,
   onAnswerResult,
@@ -48,7 +51,15 @@ const QuestionComponent: React.FC<Props> = ({
       [...selectedSet].every((code) =>
         correctSet.has(code as "A" | "B" | "C" | "D" | "E" | "F")
       );
-
+    saveInProgressTestResults(code, {
+      correct: isCorrect,
+      code: question.code,
+      answers: question.options
+        .filter((opt) => [...selectedSet].includes(opt.code))
+        .map((s) => {
+          return { code: s.code, correct: s.correct };
+        }),
+    });
     onAnswerResult?.(isCorrect);
   };
 

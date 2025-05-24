@@ -7,4 +7,7 @@ export interface Language {
   submitQuestion: string;
   next: string;
   explanation: string;
+  results: string;
+  startTest: string;
+  continueTest: string;
 }

@@ -11,4 +11,5 @@ export interface Question {
 export interface AnsweredQuestion {
   code: string;
   answers: AnswerBase[];
+  correct: boolean;
 }

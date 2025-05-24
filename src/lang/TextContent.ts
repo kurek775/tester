@@ -9,4 +9,7 @@ export const TextContent: Language = {
   submitQuestion: "Vyhodnotit otázku",
   next: "Další otázka",
   explanation: "Vysvětlení:",
+  results: "Výsledky",
+  continueTest: "Pokračovat v testu",
+  startTest: "Začít nový test",
 };

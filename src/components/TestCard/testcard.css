@@ -8,3 +8,10 @@
     margin: 0;
     background: #1e1e1e;
 }
+
+.card-wrapper .header {
+    margin: 0;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}

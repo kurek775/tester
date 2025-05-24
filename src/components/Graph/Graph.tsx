@@ -1,7 +1,8 @@
 import React from "react";
 import { Chart } from "react-charts";
 import type { AxisOptions } from "react-charts";
-import type { Record } from "../utils/LocalStorage.utils";
+import { TextContent } from "../../lang/TextContent";
+import type { Record } from "../../models/Record.model";
 
 interface Props {
   points: Record[];
@@ -11,7 +12,7 @@ const Graph: React.FC<Props> = ({ points }) => {
   const data = React.useMemo(
     () => [
       {
-        label: "Výsledky",
+        label: TextContent.results,
         data: points,
       },
     ],
@@ -20,24 +21,23 @@ const Graph: React.FC<Props> = ({ points }) => {
 
   const primaryAxis = React.useMemo<AxisOptions<Record>>(
     () => ({
-      getValue: (datum) => new Date(datum.time),
-      scaleType: "time",
+      min: 1,
+      max: points.length,
+      getValue: (data) => data.index,
+      scaleType: "linear",
     }),
     []
   );
 
   const secondaryAxes = React.useMemo<AxisOptions<Record>[]>(
     () => [
-      {
-        getValue: (datum) => datum.value,
-        scaleType: "linear",
-      },
+      { min: 0, max: 100, getValue: (data) => data.value, scaleType: "linear" },
     ],
     []
   );
 
   return (
-    <div style={{ width: "100%", height: 300 }}>
+    <div style={{ width: "100%", height: 300, background: "white" }}>
       <Chart
         options={{
           data,

@@ -1,27 +1,37 @@
-export function addNewRecord(code: string, value: number) {
-  const now = new Date().toISOString(); // ✅ ISO format is standard & parseable
-  const newRecord = { time: now, value };
+import type { AnsweredQuestion } from "../../models/Question.model";
+import type { Record } from "../../models/Record.model";
 
+export function saveCompletedTestResults(code: string, value: number) {
   const existing = localStorage.getItem(code);
   const data: Record[] = existing ? JSON.parse(existing) : [];
-
+  const newRecord = { index: data.length + 1, value };
   data.push(newRecord);
+  localStorage.removeItem(code + "_WIP");
   localStorage.setItem(code, JSON.stringify(data));
 }
 
-export interface Record {
-  time: string | Date;
-  value: number;
+export function saveInProgressTestResults(
+  code: string,
+  answeredQuestion: AnsweredQuestion
+) {
+  const existing = localStorage.getItem(code + "_WIP");
+  const data: AnsweredQuestion[] = existing ? JSON.parse(existing) : [];
+  data.push(answeredQuestion);
+  localStorage.setItem(code + "_WIP", JSON.stringify(data));
 }
-
-export function getData(code: string): Record[] {
+export function getInProgressTestResults(code: string): AnsweredQuestion[] {
+  const records = localStorage.getItem(code + "_WIP");
+  if (records) {
+    const response = JSON.parse(records) as AnsweredQuestion[];
+    return response;
+  } else {
+    return [];
+  }
+}
+export function getCompletedTestResults(code: string): Record[] {
   const records = localStorage.getItem(code);
   if (records) {
-    console.log(records);
-    const response = (JSON.parse(records) as Record[]).map((val) => {
-      return { ...val, time: new Date(val.time) };
-    });
-    console.log(response);
+    const response = JSON.parse(records) as Record[];
     return response;
   } else {
     return [];

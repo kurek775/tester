@@ -1,6 +1,6 @@
 import type { Test } from "../models/Test.model";
 
-export const demoTest: Test = {
+const Mock: Test = {
   code: "TEST001",
   title: "Sample Logic & Reasoning Test",
   questions: [
@@ -16,7 +16,7 @@ export const demoTest: Test = {
       category: "JavaScript",
     },
     {
-      code: "Q9",
+      code: "Q09",
       content:
         "Which of these values are valid numeric outputs from adding numbers in JavaScript?",
       options: [
@@ -187,3 +187,5 @@ export const demoTest: Test = {
     },
   ],
 };
+
+export default Mock;

@@ -43,6 +43,10 @@
     background: #bbbaba;
 }
 
+.dot.unanswered {
+    background: #2b2b2b;
+}
+
 .dot.selected {
     background: #ffffff;
 }
@@ -53,8 +57,4 @@
 
 .dot.incorrect {
     background: #f44336;
-}
-
-.dot.unanswered {
-    background: #bebdbd;
 }

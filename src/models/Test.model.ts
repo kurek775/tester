@@ -1,5 +1,10 @@
 import type { AnsweredQuestion, Question } from "./Question.model";
 
+export interface TestCardItem {
+  test: Test;
+  link: string;
+}
+
 export interface TestBase {
   title: string;
   questions: Question[];
