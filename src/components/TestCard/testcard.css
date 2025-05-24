@@ -15,3 +15,7 @@
     justify-content: space-between;
     padding-bottom: 1rem;
 }
+
+.button-wrapper .btn {
+    margin-left: 1rem;
+}

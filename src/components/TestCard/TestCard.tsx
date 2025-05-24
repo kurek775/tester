@@ -4,6 +4,7 @@ import Graph from "../Graph";
 import {
   getCompletedTestResults,
   getInProgressTestResults,
+  removeInProgressResults,
 } from "../utils/LocalStorage.utils";
 import type { Record } from "../../models/Record.model";
 import { Button } from "react-bootstrap";
@@ -26,21 +27,25 @@ const TestCard: React.FC<TestCardProps> = ({ testTitle, testCode, link }) => {
   const handleLinkClick = () => {
     navigate("/test/" + link);
   };
+  const handleNewlinkClick = () => {
+    removeInProgressResults(testCode);
+    handleLinkClick();
+  };
   return (
     <div className="card-wrapper">
       <div className="rounded">
         <div className="header">
           <h3>{testTitle}</h3>
-          {inProgress && (
-            <Button variant="light" onClick={handleLinkClick}>
-              {TextContent.continueTest}
-            </Button>
-          )}
-          {!inProgress && (
-            <Button variant="success" onClick={handleLinkClick}>
+          <div className="button-wrapper">
+            {inProgress && (
+              <Button variant="light" onClick={handleLinkClick}>
+                {TextContent.continueTest}
+              </Button>
+            )}
+            <Button variant="success" onClick={handleNewlinkClick}>
               {TextContent.startTest}
             </Button>
-          )}
+          </div>
         </div>
         <Graph points={data} />
       </div>

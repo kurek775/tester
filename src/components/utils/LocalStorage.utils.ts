@@ -28,6 +28,10 @@ export function getInProgressTestResults(code: string): AnsweredQuestion[] {
     return [];
   }
 }
+
+export function removeInProgressResults(code: string) {
+  localStorage.removeItem(code + "_WIP");
+}
 export function getCompletedTestResults(code: string): Record[] {
   const records = localStorage.getItem(code);
   if (records) {
