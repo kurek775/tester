@@ -1,0 +1,17 @@
+.header-wrapper {
+    padding: 1.5rem 2rem;
+    color: white;
+}
+
+.header-wrapper .rounded {
+    padding: 1rem;
+    margin: 0;
+    background: #1e1e1e;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header-wrapper h1 {
+    margin: 0;
+    font-size: 2rem;
+}

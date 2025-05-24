@@ -1,0 +1,10 @@
+.card-wrapper {
+    padding: 1.5rem 2rem;
+    color: white;
+}
+
+.card-wrapper .rounded {
+    padding: 1rem;
+    margin: 0;
+    background: #1e1e1e;
+}

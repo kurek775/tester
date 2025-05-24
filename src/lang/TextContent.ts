@@ -1,7 +1,7 @@
 import type { Language } from "../models/Language.model";
 
 export const TextContent: Language = {
-  homeTitle: "Domovská stránka",
+  homeTitle: "Seznam testů",
   testTitle: "test",
   correct: "správně",
   incorrect: "špatně",

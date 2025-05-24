@@ -1,7 +1,7 @@
 // src/App.tsx
 import React from "react";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-import HomePage from "./pages/Home";
+import HomePage from "./pages/Home/Home";
 import Test from "./pages/Test";
 import Layout from "./components/Layout";
 const App: React.FC = () => {

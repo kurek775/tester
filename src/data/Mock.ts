@@ -1,4 +1,3 @@
-// src/data/demo-test.ts
 import type { Test } from "../models/Test.model";
 
 export const demoTest: Test = {

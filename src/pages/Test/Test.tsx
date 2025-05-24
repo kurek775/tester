@@ -7,6 +7,8 @@ import ExplanationBox from "../../components/Explanation/Explanation";
 import { TextContent } from "../../lang/TextContent";
 import { Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import Header from "../../components/Header";
+import { addNewRecord } from "../../components/utils/LocalStorage.utils";
 
 const TestPage: React.FC = () => {
   const navigate = useNavigate();
@@ -28,21 +30,7 @@ const TestPage: React.FC = () => {
     const percentage =
       answers.length > 0 ? Math.round((correct / answers.length) * 100) : 0;
 
-    const now = new Date();
-    const timeString = `${now.getFullYear().toString().slice(-2)}_${(
-      now.getMonth() + 1
-    )
-      .toString()
-      .padStart(2, "0")}_${now.getDate().toString().padStart(2, "0")}_${now
-      .getHours()
-      .toString()
-      .padStart(2, "0")}_${now.getMinutes().toString().padStart(2, "0")}`;
-
-    localStorage.setItem(
-      demoTest.code + "__" + timeString,
-      percentage.toString()
-    );
-
+    addNewRecord(demoTest.code, percentage);
     navigate("/");
   };
   const handleNext = () => {
@@ -53,15 +41,12 @@ const TestPage: React.FC = () => {
     }
   };
   return (
-    <div className="test-page">
-      <div className="header-wrapper">
-        <div className="rounded">
-          <h1>{demoTest.title}</h1>
-          <Button onClick={handleSubmit} variant="success">
-            {TextContent.submit}
-          </Button>
-        </div>
-      </div>
+    <div>
+      <Header pageHeading={demoTest.title}>
+        <Button onClick={handleSubmit} variant="success">
+          {TextContent.submit}
+        </Button>
+      </Header>
       <div className="question-wrapper">
         <div className="test-question">
           <Question
