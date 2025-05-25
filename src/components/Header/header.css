@@ -15,3 +15,24 @@
     margin: 0;
     font-size: 2rem;
 }
+
+@media (max-width: 1250px) {
+    .header-wrapper h1 {
+        margin: 0;
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .header-wrapper .rounded {
+        display: block;
+    }
+
+    .header-children {
+        margin-top: 1rem;
+        display: flex;
+    }
+
+    .header-children .btn {
+        margin: auto;
+    }
+}

@@ -13,3 +13,9 @@
     flex: 3;
     height: 100%;
 }
+
+@media (max-width: 1250px) {
+    .test-results {
+        display: none;
+    }
+}

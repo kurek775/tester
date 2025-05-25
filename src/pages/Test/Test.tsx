@@ -118,7 +118,7 @@ const TestPage: React.FC = () => {
         </div>
         <div className="explanation-wrapper rounded">
           {testData.questions[currentIndex].explanation &&
-            answers[currentIndex].correct !== null && (
+            answers[currentIndex]?.correct !== null && (
               <ExplanationBox
                 explanation={testData.questions[currentIndex].explanation!}
               />

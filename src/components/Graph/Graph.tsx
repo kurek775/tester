@@ -31,7 +31,12 @@ const Graph: React.FC<Props> = ({ points }) => {
 
   const secondaryAxes = React.useMemo<AxisOptions<Record>[]>(
     () => [
-      { min: 0, max: 100, getValue: (data) => data.value, scaleType: "linear" },
+      {
+        min: 0,
+        max: 100,
+        getValue: (data) => data.value,
+        scaleType: "linear",
+      },
     ],
     []
   );

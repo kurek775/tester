@@ -10,4 +10,5 @@ export interface Language {
   results: string;
   startTest: string;
   continueTest: string;
+  attemps: string;
 }
