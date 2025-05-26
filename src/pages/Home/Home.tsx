@@ -8,12 +8,16 @@ import JazykAutomaty from "../../data/JazykAutomaty";
 import PredikatyLogika from "../../data/PredikatyLogika";
 import LinearniAlgebra from "../../data/LinearniAlgebra";
 import type { TestCardItem } from "../../models/Test.model";
+import Algoritmizace from "../../data/Algoritmizace";
+import Rekurze from "../../data/Rekurze";
 const HomePage: React.FC = () => {
   const testList: TestCardItem[] = [
     { test: MnozinyRelace, link: "MnozinyRelace" },
     { test: JazykAutomaty, link: "JazykAutomaty" },
     { test: PredikatyLogika, link: "PredikatyLogika" },
     { test: LinearniAlgebra, link: "LinearniAlgebra" },
+    { test: Algoritmizace, link: "Algoritmizace" },
+    { test: Rekurze, link: "Rekurze" },
   ];
   return (
     <div>

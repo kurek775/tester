@@ -1,13 +1,11 @@
 .question,
+.buttons,
 .options {
     background: #1e1e1e;
     color: white;
 }
 
-.question {
-    display: flex;
-    justify-content: space-between;
-}
+
 
 .correct input[type='radio'],
 .correct input[type='checkbox'] {

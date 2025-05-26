@@ -84,6 +84,11 @@ const QuestionComponent: React.FC<Props> = ({
     <div>
       <div className="mb-4 p-3 question rounded">
         <h5>{question.content}</h5>
+        {question.codeContent && (
+          <pre>
+            <code>{question.codeContent}</code>
+          </pre>
+        )}
       </div>
       <div className="mb-4 p-3 options rounded">
         <Form>
@@ -102,7 +107,7 @@ const QuestionComponent: React.FC<Props> = ({
           ))}
         </Form>
       </div>
-      <div className="p-3 question rounded">
+      <div className="p-3 buttons rounded">
         {!submitted ? (
           <Button
             variant="success"

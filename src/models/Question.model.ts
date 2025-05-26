@@ -3,6 +3,7 @@ import type { Answer, AnswerBase } from "./Answer.model";
 export interface Question {
   code: string;
   content: string;
+  codeContent?: string;
   options: Answer[];
   explanation?: string;
   category?: string;
