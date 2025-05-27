@@ -59,13 +59,13 @@ const Rekurze: Test = {
         "int fce(int *x, int y) {\n  *x = (*x) + a;\n  y = y + a;\n  b = (*x) + y;\n  return a + b;\n}\n\na = 2;\nb = 3;",
       options: [
         { code: "A", content: "11", correct: false },
-        { code: "B", content: "14", correct: true },
-        { code: "C", content: "15", correct: false },
+        { code: "B", content: "14", correct: false },
+        { code: "C", content: "15", correct: true },
         { code: "D", content: "16", correct: false },
       ],
       category: "Procedural Programming - C",
       explanation:
-        "Při volání fce(&a, b) se a změní z 2 na 4, y se lokálně upraví na 6. b se nastaví na 10 (4+6). Funkce vrací a+b = 4+10 = 14.",
+        "Při volání fce(&a, b) se a změní z 2 na 4, y se lokálně upraví na 7. b se nastaví na 11 (4+7). Funkce vrací a+b = 4+11 = 15.",
     },
     {
       code: "Q25",

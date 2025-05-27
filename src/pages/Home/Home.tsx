@@ -10,6 +10,7 @@ import LinearniAlgebra from "../../data/LinearniAlgebra";
 import type { TestCardItem } from "../../models/Test.model";
 import Algoritmizace from "../../data/Algoritmizace";
 import Rekurze from "../../data/Rekurze";
+import Mix from "../../data/Mix";
 const HomePage: React.FC = () => {
   const testList: TestCardItem[] = [
     { test: MnozinyRelace, link: "MnozinyRelace" },
@@ -18,6 +19,7 @@ const HomePage: React.FC = () => {
     { test: LinearniAlgebra, link: "LinearniAlgebra" },
     { test: Algoritmizace, link: "Algoritmizace" },
     { test: Rekurze, link: "Rekurze" },
+    { test: Mix, link: "Mix" },
   ];
   return (
     <div>
