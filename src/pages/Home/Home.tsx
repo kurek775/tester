@@ -3,23 +3,11 @@ import { TextContent } from "../../lang/TextContent";
 import "./home.css";
 import Header from "../../components/Header";
 import TestCard from "../../components/TestCard";
-import MnozinyRelace from "../../data/MnozinyRelace";
-import JazykAutomaty from "../../data/JazykAutomaty";
-import PredikatyLogika from "../../data/PredikatyLogika";
-import LinearniAlgebra from "../../data/LinearniAlgebra";
 import type { TestCardItem } from "../../models/Test.model";
-import Algoritmizace from "../../data/Algoritmizace";
-import Rekurze from "../../data/Rekurze";
-import Mix from "../../data/Mix";
+import ImplementAuth from "../../data/ImplementAuth";
 const HomePage: React.FC = () => {
   const testList: TestCardItem[] = [
-    { test: MnozinyRelace, link: "MnozinyRelace" },
-    { test: JazykAutomaty, link: "JazykAutomaty" },
-    { test: PredikatyLogika, link: "PredikatyLogika" },
-    { test: LinearniAlgebra, link: "LinearniAlgebra" },
-    { test: Algoritmizace, link: "Algoritmizace" },
-    { test: Rekurze, link: "Rekurze" },
-    { test: Mix, link: "Mix" },
+    { test: ImplementAuth, link: "ImplementAuth" },
   ];
   return (
     <div>

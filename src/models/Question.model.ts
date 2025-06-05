@@ -4,6 +4,7 @@ export interface Question {
   code: string;
   content: string;
   codeContent?: string;
+  isHtmlContent?: boolean;
   options: Answer[];
   explanation?: string;
   category?: string;

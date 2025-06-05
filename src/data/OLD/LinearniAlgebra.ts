@@ -1,4 +1,4 @@
-import type { Test } from "../models/Test.model";
+import type { Test } from "../../models/Test.model";
 
 const LinearniAlgebra: Test = {
   code: "FIT_CVUT_4",

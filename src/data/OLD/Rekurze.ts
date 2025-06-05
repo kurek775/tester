@@ -1,4 +1,4 @@
-import type { Test } from "../models/Test.model";
+import type { Test } from "../../models/Test.model";
 
 const Rekurze: Test = {
   code: "FIT_CVUT_6",
