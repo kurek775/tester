@@ -1,13 +1,13 @@
-import type { Test } from "../models/Test.model";
+import type { Test } from "../../models/Test.model";
 import Algoritmizace from "./Algoritmizace";
 import JazykAutomaty from "./JazykAutomaty";
 import LinearniAlgebra from "./LinearniAlgebra";
 import Mix from "./Mix";
 import PredikatyLogika from "./PredikatyLogika";
 import Rekurze from "./Rekurze";
-import TestMixAI from "./TestMixAI";
+import TestMixAI from "../TestMixAI";
 import MnozinyRelace from "./MnozinyRelace";
-import type { Question } from "../models/Question.model";
+import type { Question } from "../../models/Question.model";
 function getRandomQuestions(questions: Question[], count: number): Question[] {
   const shuffled = questions.sort(() => 0.5 - Math.random());
   return shuffled.slice(0, count);
