@@ -1,4 +1,4 @@
-import type { Test } from "../models/Test.model";
+import type { Test } from "../../models/Test.model";
 
 const JazykAutomaty: Test = {
   code: "FIT_CVUT_2",

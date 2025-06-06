@@ -83,7 +83,12 @@ const QuestionComponent: React.FC<Props> = ({
   return (
     <div>
       <div className="mb-4 p-3 question rounded">
-        <h5>{question.content}</h5>
+        {question.isHtmlContent ? (
+          <span dangerouslySetInnerHTML={{ __html: question.content }} />
+        ) : (
+          question.content
+        )}
+
         {question.codeContent && (
           <pre>
             <code>{question.codeContent}</code>

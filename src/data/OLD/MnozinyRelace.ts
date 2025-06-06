@@ -1,4 +1,4 @@
-import type { Test } from "../models/Test.model";
+import type { Test } from "../../models/Test.model";
 
 const MnozinyRelace: Test = {
   code: "FIT_CVUT_1",

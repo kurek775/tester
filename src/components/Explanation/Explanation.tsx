@@ -8,7 +8,8 @@ interface Props {
 const ExplanationBox: React.FC<Props> = ({ explanation }) => {
   return (
     <div className="p-3 explanation rounded">
-      <strong>{TextContent.explanation}</strong> {explanation}
+      <strong>{TextContent.explanation}</strong>
+      <span dangerouslySetInnerHTML={{ __html: explanation }} />
     </div>
   );
 };
