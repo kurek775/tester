@@ -231,16 +231,17 @@ const PredikatyLogika: Test = {
       content:
         "Která z následujících formulí γ je pravdivá ve všech ohodnoceních, ve kterých je pravdivá množina formulí {a ⇒ (b ∧ c), b ⇒ (a ∧ c)}? Říkáme, že γ je sémantickým důsledkem této množiny.",
       options: [
-        { code: "A", content: "c", correct: false },
-        { code: "B", content: "a ⇒ b", correct: true },
+        { code: "A", content: "c", correct: true },
+        { code: "B", content: "a ⇒ b", correct: false },
         { code: "C", content: "b", correct: false },
         { code: "D", content: "a", correct: false },
         { code: "E", content: "c ⇒ b", correct: false },
       ],
       category: "Výroková logika – sémantický důsledek",
       explanation:
-        "Z formule a ⇒ (b ∧ c) plyne a ⇒ b. Zároveň formule b ⇒ (a ∧ c) plyne b ⇒ a, takže dohromady a ⇔ b. Z toho plyne i a ⇒ b. Jiné výroky nelze ze zadání jednoznačně odvodit.",
+        "Z první formule a ⇒ (b ∧ c) plyne, že pokud platí a, pak musí platit b i c. Z druhé formule b ⇒ (a ∧ c) plyne, že pokud platí b, pak musí platit a i c. Z toho vyplývá, že a ⇔ b a zároveň c je vždy pravdivé, pokud obě formule platí. Proto je výrok c sémantickým důsledkem dané množiny formulí.",
     },
+
     {
       code: "Q40",
       content:

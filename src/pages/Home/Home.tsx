@@ -11,8 +11,11 @@ import type { TestCardItem } from "../../models/Test.model";
 import Algoritmizace from "../../data/Algoritmizace";
 import Rekurze from "../../data/Rekurze";
 import Mix from "../../data/Mix";
+import TestMixAI from "../../data/TestMixAI";
+import Random from "../../data/Random";
 const HomePage: React.FC = () => {
   const testList: TestCardItem[] = [
+    { test: Random, link: "Random" },
     { test: MnozinyRelace, link: "MnozinyRelace" },
     { test: JazykAutomaty, link: "JazykAutomaty" },
     { test: PredikatyLogika, link: "PredikatyLogika" },
@@ -20,6 +23,7 @@ const HomePage: React.FC = () => {
     { test: Algoritmizace, link: "Algoritmizace" },
     { test: Rekurze, link: "Rekurze" },
     { test: Mix, link: "Mix" },
+    { test: TestMixAI, link: "TestMixAI" },
   ];
   return (
     <div>
