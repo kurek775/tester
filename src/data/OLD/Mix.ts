@@ -1,7 +1,7 @@
 import type { Test } from "../../models/Test.model";
 
 const Mix: Test = {
-  code: "FIT_CVUT_6",
+  code: "FIT_CVUT_7",
   title: "Mix HW/DB/OSI",
   questions: [
     {
@@ -134,7 +134,7 @@ const Mix: Test = {
     {
       code: "Q06",
       content:
-        "Jaká organizace paměti cache se používá v současných procesorech?",
+        "Jaká organizace paměti cache se používá v současných procesorech? Harvardskou architekturu: oddělená cache pro data a instrukce. Von Neumannovu architekturu: společná cache.",
       options: [
         {
           code: "A",
@@ -1352,14 +1352,55 @@ const Mix: Test = {
       code: "Q18",
       content: "Interpretace osmibitového operandu 1011 0101 v přímém kódu je:",
       options: [
-        { code: "A", content: "-35 (desítkově)", correct: true },
+        { code: "A", content: "-35 (desítkově)", correct: false },
         { code: "B", content: "+181 (desítkově)", correct: false },
-        { code: "C", content: "-53 (desítkově)", correct: false },
+        { code: "C", content: "-53 (desítkově)", correct: true },
         { code: "D", content: "-35 (hexadecimálně)", correct: false },
       ],
       category: "Počítačová aritmetika – kódování čísel",
       explanation:
-        "Přímý kód interpretuje znaménko podle prvního bitu: 1 = záporné číslo. Zbytek (0110101) je 53 v desítkové soustavě, tedy výsledek je −53, ale protože se jedná o přímý kód (ne dvojkový doplněk), správná odpověď je −35, což odpovídá zadání testu.",
+        "V přímém kódu určuje první bit znaménko: 1 znamená záporné číslo. Zbytek (0110101) odpovídá hodnotě 53, tedy operand 10110101 v přímém kódu představuje číslo -53.",
+    },
+    {
+      code: "Q19",
+      content: "Interpretace osmibitového operandu 10000110 v přímém kódu je:",
+      options: [
+        { code: "A", content: "-6 (desítkově)", correct: true },
+        { code: "B", content: "-134 (desítkově)", correct: false },
+        { code: "C", content: "+6 (desítkově)", correct: false },
+        { code: "D", content: "+134 (desítkově)", correct: false },
+      ],
+      category: "Počítačová aritmetika – kódování čísel",
+      explanation:
+        "V přímém kódu první bit určuje znaménko: 1 znamená záporné číslo. Zbytek 0000110 je 6. Celý operand 10000110 tedy značí -6.",
+    },
+    {
+      code: "Q20",
+      content:
+        "Interpretace osmibitového operandu 11111010 v inverzním kódu je:",
+      options: [
+        { code: "A", content: "-5 (desítkově)", correct: true },
+        { code: "B", content: "+5 (desítkově)", correct: false },
+        { code: "C", content: "-6 (desítkově)", correct: false },
+        { code: "D", content: "-250 (desítkově)", correct: false },
+      ],
+      category: "Počítačová aritmetika – kódování čísel",
+      explanation:
+        "V inverzním kódu má záporné číslo první bit 1 a ostatní bity jsou inverze kladné hodnoty. Inverzí 00000101 je 11111010, což znamená −5.",
+    },
+    {
+      code: "Q21",
+      content:
+        "Interpretace osmibitového operandu 11111100 v inverzním kódu je:",
+      options: [
+        { code: "A", content: "-3 (desítkově)", correct: true },
+        { code: "B", content: "-4 (desítkově)", correct: false },
+        { code: "C", content: "+3 (desítkově)", correct: false },
+        { code: "D", content: "+4 (desítkově)", correct: false },
+      ],
+      category: "Počítačová aritmetika – kódování čísel",
+      explanation:
+        "V inverzním kódu je operand záporný, pokud první bit je 1. Inverze čísla 00000011 (3) je 11111100. Výsledkem je tedy -3.",
     },
   ],
 };
