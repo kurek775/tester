@@ -1,5 +1,5 @@
 export interface AnswerBase {
-  code: "A" | "B" | "C" | "D" | "E" | "F";
+  code: "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J";
   correct: boolean;
 }
 

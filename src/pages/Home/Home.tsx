@@ -5,9 +5,19 @@ import Header from "../../components/Header";
 import TestCard from "../../components/TestCard";
 import type { TestCardItem } from "../../models/Test.model";
 import ImplementAuth from "../../data/ImplementAuth";
+import PlanAndAutomateIdentityGovernance from "../../data/PlanAndAutomateIdentityGovernance";
+import ImplementAndManageUserIdentities from "../../data/ImplementAndManageUserIdentities";
 const HomePage: React.FC = () => {
   const testList: TestCardItem[] = [
     { test: ImplementAuth, link: "ImplementAuth" },
+    {
+      test: PlanAndAutomateIdentityGovernance,
+      link: "PlanAndAutomateIdentityGovernance",
+    },
+    {
+      test: ImplementAndManageUserIdentities,
+      link: "ImplementAndManageUserIdentities",
+    },
   ];
   return (
     <div>
