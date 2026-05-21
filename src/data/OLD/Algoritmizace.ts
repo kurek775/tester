@@ -42,7 +42,7 @@ const Algoritmizace: Test = {
           code: "D",
           content:
             "jednosměrným zřetězeným seznamem s ukazatelem na čelo i konec fronty",
-          correct: false,
+          correct: true,
         },
         {
           code: "E",
@@ -52,7 +52,7 @@ const Algoritmizace: Test = {
       ],
       category: "Datové struktury – implementace fronty",
       explanation:
-        "Fronta se dá implementovat pomocí dynamického pole, pole pevné délky i dvousměrného cyklického seznamu. Jednosměrný seznam s ukazatelem jen na čelo nestačí, protože neumožňuje efektivní přístup na konec fronty.",
+        "Fronta se dá implementovat pomocí dynamického pole, pole pevné délky, dvousměrného cyklického seznamu i jednosměrného seznamu s ukazateli na čelo i konec (enqueue na konec v O(1), dequeue z čela v O(1)). Jednosměrný seznam s ukazatelem jen na čelo nestačí pro efektivní implementaci.",
     },
     {
       code: "Q16",

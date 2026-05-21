@@ -685,7 +685,7 @@ const Mix: Test = {
         {
           code: "B",
           content: "2 dvouvstupová hradla typu NOR",
-          correct: false,
+          correct: true,
         },
         {
           code: "C",
@@ -695,7 +695,7 @@ const Mix: Test = {
       ],
       category: "Logické obvody – sekvenční logika",
       explanation:
-        "Základní asynchronní RS klopný obvod lze sestavit pomocí 2 NAND hradel (aktivní v nule) nebo 2 NOR hradel (aktivní v jedničce). Zadání vyžaduje nejmenší počet – tj. 2 NAND.",
+        "Základní asynchronní RS klopný obvod lze sestavit pomocí 2 NAND hradel (aktivní v nule) nebo 2 NOR hradel (aktivní v jedničce). Obě varianty vyžadují stejný minimální počet – 2 hradla.",
     },
     {
       code: "Q32",
@@ -1339,14 +1339,14 @@ const Mix: Test = {
       content:
         "Ve sportovní základní škole je 40 % děvčat. Z dívek 20 % a z chlapců 10 % reprezentuje školu ve školním týmu košíkové. Vybereme náhodně jednoho žáka ze školního týmu košíkové. Jaká je pravděpodobnost, že vybraný žák je chlapec?",
       options: [
-        { code: "A", content: "8/15", correct: true },
-        { code: "B", content: "6/14", correct: false },
+        { code: "A", content: "8/15", correct: false },
+        { code: "B", content: "6/14", correct: true },
         { code: "C", content: "8/14", correct: false },
         { code: "D", content: "6/15", correct: false },
       ],
       category: "Pravděpodobnost – Bayesova věta",
       explanation:
-        "Pomocí Bayesovy věty: celkem ve výběru je 0.4×0.2 + 0.6×0.1 = 0.08 + 0.06 = 0.14. Podíl chlapců je 0.06 / 0.14 = 6/14 = 3/7 ≈ 8/15 (početní přepočet závisí na přesném výkladu, odpověď 8/15 odpovídá danému formátu testu).",
+        "Pomocí Bayesovy věty: P(tým) = 0.4×0.2 + 0.6×0.1 = 0.08 + 0.06 = 0.14. P(chlapec|tým) = 0.06 / 0.14 = 6/14 = 3/7.",
     },
     {
       code: "Q18",

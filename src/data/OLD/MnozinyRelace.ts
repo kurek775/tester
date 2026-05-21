@@ -50,14 +50,14 @@ const MnozinyRelace: Test = {
       content:
         "Uvažujme binární relaci R = {(a,b), (b,a)} na množině X = {a,b,c}. Určete, která z následujících relací je ekvivalencí na X.",
       options: [
-        { code: "A", content: "R ∪ R⁻¹", correct: true },
+        { code: "A", content: "R ∪ R⁻¹", correct: false },
         { code: "B", content: "R⁺", correct: false },
         { code: "C", content: "R ∪ ΔX", correct: true },
         { code: "D", content: "Žádná z uvedených", correct: false },
       ],
       category: "Mnoziny relace",
       explanation:
-        "Relace R je symetrická, ale neobsahuje žádné reflexivní dvojice (x, x), a tedy není reflexivní. R⁺ je tranzitivní uzávěr, ale stále neobsahuje (c, c). Pouze R ∪ Δ_X obsahuje reflexi, je symetrická a také tranzitivní, takže tvoří úplnou ekvivalenci na celé množině X = {a, b, c}.",
+        "Relace R = {(a,b), (b,a)} je již symetrická, takže R⁻¹ = R a R ∪ R⁻¹ = R. Tato relace není reflexivní (chybí (a,a), (b,b), (c,c)), proto není ekvivalencí. R⁺ přidá (a,a) a (b,b), ale stále chybí (c,c). Pouze R ∪ ΔX přidá všechny reflexivní dvojice a výsledná relace je reflexivní, symetrická i tranzitivní – tedy ekvivalence s třídami {a, b} a {c}.",
     },
     {
       code: "Q5",
