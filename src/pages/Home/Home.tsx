@@ -4,26 +4,26 @@ import "./home.css";
 import Header from "../../components/Header";
 import TestCard from "../../components/TestCard";
 import type { TestCardItem } from "../../models/Test.model";
-import MnozinyRelace from "../../data/OLD/MnozinyRelace";
-import JazykAutomaty from "../../data/OLD/JazykAutomaty";
-import PredikatyLogika from "../../data/OLD/PredikatyLogika";
-import LinearniAlgebra from "../../data/OLD/LinearniAlgebra";
-import Algoritmizace from "../../data/OLD/Algoritmizace";
-import Rekurze from "../../data/OLD/Rekurze";
-import Mix from "../../data/OLD/Mix";
+import MnozinyRelace from "../../data/MnozinyRelace";
+import JazykAutomaty from "../../data/JazykAutomaty";
+import PredikatyLogika from "../../data/PredikatyLogika";
+import LinearniAlgebra from "../../data/LinearniAlgebra";
+import Algoritmizace from "../../data/Algoritmizace";
+import Rekurze from "../../data/Rekurze";
+import Mix from "../../data/Mix";
 import TestMixAI from "../../data/TestMixAI";
-import Random from "../../data/OLD/Random";
+import Random from "../../data/Random";
 const HomePage: React.FC = () => {
   const testList: TestCardItem[] = [
-    { test: MnozinyRelace, link: "OLD/MnozinyRelace" },
-    { test: JazykAutomaty, link: "OLD/JazykAutomaty" },
-    { test: PredikatyLogika, link: "OLD/PredikatyLogika" },
-    { test: LinearniAlgebra, link: "OLD/LinearniAlgebra" },
-    { test: Algoritmizace, link: "OLD/Algoritmizace" },
-    { test: Rekurze, link: "OLD/Rekurze" },
-    { test: Mix, link: "OLD/Mix" },
+    { test: MnozinyRelace, link: "MnozinyRelace" },
+    { test: JazykAutomaty, link: "JazykAutomaty" },
+    { test: PredikatyLogika, link: "PredikatyLogika" },
+    { test: LinearniAlgebra, link: "LinearniAlgebra" },
+    { test: Algoritmizace, link: "Algoritmizace" },
+    { test: Rekurze, link: "Rekurze" },
+    { test: Mix, link: "Mix" },
     { test: TestMixAI, link: "TestMixAI" },
-    { test: Random, link: "OLD/Random" },
+    { test: Random, link: "Random" },
   ];
   return (
     <div>

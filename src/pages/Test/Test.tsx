@@ -15,7 +15,7 @@ import type { Test } from "../../models/Test.model";
 
 const TestPage: React.FC = () => {
   const navigate = useNavigate();
-  const { '*': file } = useParams();
+  const { file } = useParams<{ file: string }>();
   const [testData, setTestData] = useState<Test | null>(null);
 
   const [completed, setCompleted] = useState(false);

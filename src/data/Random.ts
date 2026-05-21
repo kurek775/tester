@@ -1,13 +1,13 @@
-import type { Test } from "../../models/Test.model";
+import type { Test } from "../models/Test.model";
 import Algoritmizace from "./Algoritmizace";
 import JazykAutomaty from "./JazykAutomaty";
 import LinearniAlgebra from "./LinearniAlgebra";
 import Mix from "./Mix";
 import PredikatyLogika from "./PredikatyLogika";
 import Rekurze from "./Rekurze";
-import TestMixAI from "../TestMixAI";
+import TestMixAI from "./TestMixAI";
 import MnozinyRelace from "./MnozinyRelace";
-import type { Question } from "../../models/Question.model";
+import type { Question } from "../models/Question.model";
 function shuffle(array: Question[]): Question[] {
   const arr = [...array];
   for (let i = arr.length - 1; i > 0; i--) {
