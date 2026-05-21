@@ -8,18 +8,22 @@ import Rekurze from "./Rekurze";
 import TestMixAI from "../TestMixAI";
 import MnozinyRelace from "./MnozinyRelace";
 import type { Question } from "../../models/Question.model";
-function getRandomQuestions(questions: Question[], count: number): Question[] {
-  const shuffled = questions.sort(() => 0.5 - Math.random());
-  return shuffled.slice(0, count);
+function shuffle(array: Question[]): Question[] {
+  const arr = [...array];
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+  return arr;
 }
-function randomizeOrder(questions: Question[]): Question[] {
-  return questions.sort(() => Math.random() - 0.5);
+function getRandomQuestions(questions: Question[], count: number): Question[] {
+  return shuffle(questions).slice(0, count);
 }
 
 const Random: Test = {
   code: "FIT_CVUT_10",
   title: "Náhodný test ze všech témat",
-  questions: randomizeOrder([
+  questions: shuffle([
     ...getRandomQuestions(MnozinyRelace.questions, 2),
     ...getRandomQuestions(JazykAutomaty.questions, 2),
     ...getRandomQuestions(PredikatyLogika.questions, 3),

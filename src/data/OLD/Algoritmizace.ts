@@ -233,7 +233,7 @@ const Algoritmizace: Test = {
         "Pravá rotace v binárním vyhledávacím stromu posune levého syna uzlu nahoru a samotný uzel dolů doprava. Tím se sníží hloubka pravého syna (bývalý uzel u) a uzly se 'vymění'.",
     },
     {
-      code: "Q10",
+      code: "Q10_2",
       content:
         "Které z následujících synchronizačních technik jsou založeny na blokování a lze jimi synchronizovat procesy nebo vlákna?",
       options: [
@@ -265,7 +265,7 @@ const Algoritmizace: Test = {
         "U charakteristického vektoru je každý prvek reprezentován binární hodnotou na konkrétním indexu. Přístup k indexu je v konstantním čase, tedy Θ(1) pro všechny operace.",
     },
     {
-      code: "Q12",
+      code: "Q12_2",
       content: "Pro dva disjunktní jevy platí, že",
       options: [
         { code: "A", content: "jsou vždy nezávislé", correct: false },
@@ -319,7 +319,7 @@ const Algoritmizace: Test = {
         "Posun vlevo o jeden bit odpovídá násobení dvěma (posune všechny bity o jeden doprava), dva bity odpovídají násobení čtyřmi. Posun vpravo odpovídá dělení dvěma – zaokrouhluje dolů.",
     },
     {
-      code: "Q14",
+      code: "Q14_2",
       content:
         "Sečtěte dvě osmibitová čísla FF a 01 vyjádřené v šestnáctkové soustavě pomocí 8bitové sčítačky s interpretací jako čísla v doplňkovém kódu. Jaký bude výsledek?",
       options: [
@@ -356,7 +356,7 @@ const Algoritmizace: Test = {
         "Rovnost A \\ (B ? C) = (A \\ B) ? C neplatí obecně pro žádnou ze základních množinových operací – průnik, sjednocení ani rozdíl – protože se výsledky obou stran mohou lišit v různých případech.",
     },
     {
-      code: "Q16",
+      code: "Q16_2",
       content:
         "Předpokládejme implementaci zásobníku pomocí statického pole. Jaké jsou složitosti operací test prázdnosti, vložení do zásobníku, odebrání z vrcholu zásobníku?",
       options: [
@@ -370,7 +370,7 @@ const Algoritmizace: Test = {
         "U zásobníku implementovaného statickým polem jsou všechny operace (push, pop, isEmpty) realizovány v konstantním čase Θ(1), protože jde pouze o posuny indexů bez nutnosti přesouvat prvky.",
     },
     {
-      code: "Q17",
+      code: "Q17_2",
       content:
         "Sečtěte dvě osmibitová čísla 35 a 87 vyjádřená v šestnáctkové soustavě pomocí 8bitové sčítačky. Interpretace součtu (výstupu ze sčítačky) je:",
       options: [
@@ -500,7 +500,7 @@ const Algoritmizace: Test = {
         "Multiplikativní inverze existuje pouze, pokud číslo a a modul m jsou nesoudělná čísla. GCD(3, 6) = 3 ≠ 1, proto 3 nemá inverzi modulo 6.",
     },
     {
-      code: "Q13",
+      code: "Q13_2",
       content:
         "Zpracování binárního stromu v pořadí preorder se rozumí následující:",
       options: [
@@ -533,7 +533,7 @@ const Algoritmizace: Test = {
         "Preorder (prefixový) průchod stromem znamená navštívit nejprve kořen, potom levý podstrom a nakonec pravý podstrom. To odpovídá možnosti D.",
     },
     {
-      code: "Q12",
+      code: "Q12_3",
       content:
         "Funkce Ω - omega a O - omikron definují asymptotickou složitost. Které z uvedených tvrzení je pravdivé?",
       options: [
@@ -546,7 +546,7 @@ const Algoritmizace: Test = {
         "Výraz 1.8·x + 600·log₂(x) je asymptoticky lineární, protože logaritmický člen je asymptoticky menší než lineární. Celý výraz je tedy v O(x).",
     },
     {
-      code: "Q17",
+      code: "Q17_3",
       content:
         "Je dán prostý neorientovaný graf G o n vrcholech a m hranách. Které z následujících tvrzení je pravdivé?",
       options: [

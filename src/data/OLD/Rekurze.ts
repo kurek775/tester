@@ -180,7 +180,7 @@ const Rekurze: Test = {
         "V C++ se nerozlišuje přetěžování funkcí pouze podle rozdílných typů parametrů jako `float` vs `double`. `f(1, 2.1)` je nejednoznačné, protože literál 2.1 může být považován jak za `double`, tak přetypován na `int`. Kompilátor není schopen rozhodnout, kterou funkci zavolat, takže nastane chyba při kompilaci.",
     },
     {
-      code: "Q13",
+      code: "Q13_2",
       content: "Kolikrát se zavolá funkce abc(x), pokud ff(2)?",
       codeContent:
         "void ff(int x) {\n  if (x >= 0) ff(x - 2);\n  abc(x);\n  if (x <= 0) ff(x - 2);\n}",

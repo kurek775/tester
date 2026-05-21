@@ -162,7 +162,7 @@ const Mix: Test = {
         "Moderní procesory používají buď oddělené cache pro instrukce a data (Harvardova architektura), nebo společné (Von Neumannova architektura), případně jejich kombinaci – proto je správně, že se používají oba přístupy.",
     },
     {
-      code: "Q04",
+      code: "Q04_2",
       content: "Superpipeline dosahuje urychlení výpočtu programu pomocí:",
       options: [
         {
@@ -239,7 +239,7 @@ const Mix: Test = {
         "Linková vrstva zajišťuje formátování rámců, jejich detekci začátku a konce a často i řízení přístupu k médiu. Rozlišování procesů patří do transportní vrstvy.",
     },
     {
-      code: "Q01",
+      code: "Q01_2",
       content: "RSA je šifra",
       options: [
         { code: "A", content: "synchronní", correct: false },
@@ -253,7 +253,7 @@ const Mix: Test = {
         "RSA je asymetrická šifra využívající dvojici klíčů – veřejný a soukromý – pro šifrování a dešifrování.",
     },
     {
-      code: "Q02",
+      code: "Q02_2",
       content: "Systémový katalog relační databáze obsahuje",
       options: [
         {
@@ -283,7 +283,7 @@ const Mix: Test = {
         "Systémový katalog obsahuje metadata o databázových strukturách a informace o přístupových právech uživatelů.",
     },
     {
-      code: "Q03",
+      code: "Q03_2",
       content: "Klíč relace v relační databázi má tyto vlastnosti:",
       options: [
         {
@@ -313,7 +313,7 @@ const Mix: Test = {
         "Klíč v relaci je minimální množina atributů, která jednoznačně identifikuje každou n-tici a jejíž tranzitivní uzávěr zahrnuje všechny atributy relace.",
     },
     {
-      code: "Q04",
+      code: "Q04_3",
       content:
         "Pevný disk má rychlost otáček 5000 RPM. Jaké bude průměrné rotační zpoždění při čtení jednoho sektoru?",
       options: [
@@ -327,7 +327,7 @@ const Mix: Test = {
         "Při 5000 otáčkách za minutu trvá jedna otáčka 12 ms, a průměrné rotační zpoždění je polovina této doby – tedy 6 ms.",
     },
     {
-      code: "Q05",
+      code: "Q05_2",
       content:
         "Síťový protokol UDP se od protokolu TCP liší mimo jiné tím, že:",
       options: [
@@ -353,7 +353,7 @@ const Mix: Test = {
         "UDP je jednoduchý protokol bez spojení, neprovádí potvrzování, kontrolu pořadí ani navázání spojení jako TCP.",
     },
     {
-      code: "Q06",
+      code: "Q06_2",
       content:
         "Síť, ve které lze přidělit IPv4 adresy v rozsahu 19.11.32.1 až 19.11.32.254, má adresu a masku:",
       options: [
@@ -427,7 +427,7 @@ const Mix: Test = {
         "Multiplikativní inverze \\( a^{-1} \\mod m \\) je takové číslo, že \\( a \\cdot a^{-1} \\equiv 1 \\mod m \\). Pro 97 modulo 138 je inverze 37, protože \\( 97 \\cdot 37 \\equiv 1 \\mod 138 \\).",
     },
     {
-      code: "Q05",
+      code: "Q05_3",
       content: "Polymorfismus mohu v Javě realizovat:",
       options: [
         {
@@ -443,7 +443,7 @@ const Mix: Test = {
         "Polymorfismus lze v Javě realizovat jak pomocí abstraktní třídy, tak pomocí rozhraní (interface).",
     },
     {
-      code: "Q06",
+      code: "Q06_3",
       content:
         "Procesor má 24bitovou adresovou sběrnici a 16bitovou datovou sběrnici. Jaké největší množství paměti může tento procesor adresovat:",
       options: [
@@ -457,7 +457,7 @@ const Mix: Test = {
         "Velikost adresovatelné paměti je určena adresovou sběrnicí. 2^24 = 16 MB.",
     },
     {
-      code: "Q07",
+      code: "Q07_2",
       content: "Které z následujících tvrzení je pravdivé:",
       options: [
         {
@@ -488,7 +488,7 @@ const Mix: Test = {
         "Instrukce RISC jsou jednodušší, ale více jich je potřeba – výsledek je delší kód oproti CISC.",
     },
     {
-      code: "Q08",
+      code: "Q08_2",
       content:
         "Čeho se vlastně dosáhne aplikací superskalární architektury nebo pipeliningem?",
       options: [
@@ -515,7 +515,7 @@ const Mix: Test = {
         "Superskalární architektura a pipelining jsou různé metody zvýšení výkonu procesoru.",
     },
     {
-      code: "Q11",
+      code: "Q11_2",
       content: "Pro virtualizaci paměti se využívá:",
       options: [
         { code: "A", content: "pouze stránkování.", correct: false },
@@ -836,7 +836,7 @@ const Mix: Test = {
         "Jeden přístup je potřeba pro načtení kořenového adresáře a druhý pro přečtení řetězce bloků v FAT tabulce.",
     },
     {
-      code: "Q15",
+      code: "Q15_2",
       content: "Pořadí vrstev v ISO modelu architektury počítačové sítě je:",
       options: [
         {
@@ -869,7 +869,7 @@ const Mix: Test = {
         "Správné pořadí vrstev ISO/OSI je: fyzická, linková, síťová, transportní, relační (session), prezentační, aplikační.",
     },
     {
-      code: "Q16",
+      code: "Q16_2",
       content: "Při testování statistických hypotéz je chyba druhého druhu:",
       options: [
         {
@@ -1322,7 +1322,7 @@ const Mix: Test = {
         "UDP je bezspojový protokol, neprovádí navázání ani ukončení spojení. TCP je spojovaný, ale umožňuje tzv. 'windowing', tedy odesílání více fragmentů bez čekání na ACK.",
     },
     {
-      code: "Q16",
+      code: "Q16_3",
       content: "Které z následujících spojitých rozdělení nemá paměť?",
       options: [
         { code: "A", content: "Normální rozdělení.", correct: false },
@@ -1335,7 +1335,7 @@ const Mix: Test = {
         "Exponenciální rozdělení je jediné spojité rozdělení, které má vlastnost bezezbytkové paměti – tzn. pravděpodobnost zbývající doby nezávisí na tom, jak dlouho už proces běží.",
     },
     {
-      code: "Q17",
+      code: "Q17_2",
       content:
         "Ve sportovní základní škole je 40 % děvčat. Z dívek 20 % a z chlapců 10 % reprezentuje školu ve školním týmu košíkové. Vybereme náhodně jednoho žáka ze školního týmu košíkové. Jaká je pravděpodobnost, že vybraný žák je chlapec?",
       options: [
@@ -1362,7 +1362,7 @@ const Mix: Test = {
         "V přímém kódu určuje první bit znaménko: 1 znamená záporné číslo. Zbytek (0110101) odpovídá hodnotě 53, tedy operand 10110101 v přímém kódu představuje číslo -53.",
     },
     {
-      code: "Q19",
+      code: "Q19_2",
       content: "Interpretace osmibitového operandu 10000110 v přímém kódu je:",
       options: [
         { code: "A", content: "-6 (desítkově)", correct: true },
@@ -1389,7 +1389,7 @@ const Mix: Test = {
         "V inverzním kódu má záporné číslo první bit 1 a ostatní bity jsou inverze kladné hodnoty. Inverzí 00000101 je 11111010, což znamená −5.",
     },
     {
-      code: "Q21",
+      code: "Q21_2",
       content:
         "Interpretace osmibitového operandu 11111100 v inverzním kódu je:",
       options: [
