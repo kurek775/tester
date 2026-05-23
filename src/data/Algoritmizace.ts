@@ -148,20 +148,6 @@ const Algoritmizace: Test = {
         "TSL (Test and Set Lock) a Petersonův algoritmus používají aktivní čekání – tedy 'busy waiting', kde vlákno aktivně zjišťuje podmínku beze spánku. Lze je použít pro synchronizaci procesů i vláken.",
     },
     {
-      code: "Q14",
-      content:
-        "Cyklická fronta je implementována pomocí pole F o velikosti n a indexů i (head) a j (tail). Pokud budeme uvažovat nejlepší známý algoritmus pro zjištění aktuálního počtu prvků ve frontě, kam bude patřit jeho složitost?",
-      options: [
-        { code: "A", content: "Ω(1)", correct: true },
-        { code: "B", content: "Θ(1)", correct: true },
-        { code: "C", content: "Ω(n)", correct: false },
-        { code: "D", content: "Θ(n)", correct: false },
-      ],
-      category: "Datové struktury – fronty",
-      explanation:
-        "Pokud fronta pracuje v kruhovém bufferu s uloženými indexy, pak je možné zjistit počet prvků v konstantním čase pomocí vzorce závislého na rozdílu mezi indexy (i a j) a velikosti pole n. Proto má algoritmus složitost Θ(1), což zároveň znamená i Ω(1).",
-    },
-    {
       code: "Q5",
       content:
         "Instrukce skoku se (u procesoru s jednoadresovými instrukcemi) provede tak, že se adresní část instrukce zapíše",

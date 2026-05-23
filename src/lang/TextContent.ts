@@ -5,6 +5,7 @@ export const TextContent: Language = {
   testTitle: "test",
   correct: "správně",
   incorrect: "špatně",
+  partial: "částečně",
   submit: "Zaznamenat výsledek testu",
   submitQuestion: "Vyhodnotit otázku",
   next: "Další otázka",
@@ -13,4 +14,12 @@ export const TextContent: Language = {
   attemps: "Pokusy",
   continueTest: "Pokračovat v testu",
   startTest: "Začít nový test",
+  studyGuide: "Studijní průvodce",
+  guideIntro:
+    "Témata seřazená podle počtu otázek – začni od největších, mají nejvyšší návratnost.",
+  questionsWord: "otázek",
+  correctAnswer: "Správná odpověď",
+  back: "Zpět",
+  byRoi: "seřazeno podle počtu otázek (návratnost)",
+  areaNotFound: "Téma nenalezeno",
 };

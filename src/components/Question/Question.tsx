@@ -10,7 +10,7 @@ interface Props {
   code: string;
   question: Question;
   onNext?: () => void;
-  onAnswerResult?: (isCorrect: boolean) => void;
+  onAnswerResult?: (score: number) => void;
   disableNext?: boolean;
 }
 
@@ -40,27 +40,38 @@ const QuestionComponent: React.FC<Props> = ({
   const handleSubmit = () => {
     setSubmitted(true);
 
-    const correctAnswers = question.options
-      .filter((o) => o.correct)
-      .map((o) => o.code);
-    const selectedSet = new Set(selected);
-    const correctSet = new Set(correctAnswers);
+    const correctSet = new Set<string>(
+      question.options.filter((o) => o.correct).map((o) => o.code)
+    );
+    const selectedSet = new Set<string>(selected);
 
-    const isCorrect =
-      selectedSet.size === correctSet.size &&
-      [...selectedSet].every((code) =>
-        correctSet.has(code as "A" | "B" | "C" | "D" | "E" | "F")
-      );
+    const correctSelected = [...selectedSet].filter((c) =>
+      correctSet.has(c)
+    ).length;
+    const incorrectSelected = selectedSet.size - correctSelected;
+
+    const isFullyCorrect =
+      correctSelected === correctSet.size && incorrectSelected === 0;
+    // Partial credit applies only to multi-answer questions: you picked at least
+    // one correct option, none wrong, but didn't select them all.
+    const isPartial =
+      isMultiple &&
+      !isFullyCorrect &&
+      correctSelected > 0 &&
+      incorrectSelected === 0;
+    const score = isFullyCorrect ? 1 : isPartial ? 0.5 : 0;
+
     saveInProgressTestResults(code, {
-      correct: isCorrect,
+      correct: isFullyCorrect,
+      score,
       code: question.code,
       answers: question.options
-        .filter((opt) => [...selectedSet].includes(opt.code))
+        .filter((opt) => selectedSet.has(opt.code))
         .map((s) => {
           return { code: s.code, correct: s.correct };
         }),
     });
-    onAnswerResult?.(isCorrect);
+    onAnswerResult?.(score);
   };
 
   const handleNext = () => {

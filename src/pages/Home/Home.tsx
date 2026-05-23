@@ -1,4 +1,6 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { Button } from "react-bootstrap";
 import { TextContent } from "../../lang/TextContent";
 import "./home.css";
 import Header from "../../components/Header";
@@ -14,6 +16,7 @@ import Mix from "../../data/Mix";
 import TestMixAI from "../../data/TestMixAI";
 import Random from "../../data/Random";
 const HomePage: React.FC = () => {
+  const navigate = useNavigate();
   const testList: TestCardItem[] = [
     { test: MnozinyRelace, link: "MnozinyRelace" },
     { test: JazykAutomaty, link: "JazykAutomaty" },
@@ -27,7 +30,11 @@ const HomePage: React.FC = () => {
   ];
   return (
     <div>
-      <Header pageHeading={TextContent.homeTitle} />
+      <Header pageHeading={TextContent.homeTitle}>
+        <Button variant="success" onClick={() => navigate("/guide")}>
+          {TextContent.studyGuide}
+        </Button>
+      </Header>
       {testList.map((testItem, index) => (
         <TestCard
           key={index}

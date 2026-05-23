@@ -974,39 +974,6 @@ const Mix: Test = {
         "Certifikát subjektu A slouží k ověření identity a typicky obsahuje veřejný klíč subjektu, podepsaný certifikační autoritou.",
     },
     {
-      code: "Q999",
-      content: "Superpipeline dosahuje urychlení výpočtu programu pomocí:",
-      options: [
-        {
-          code: "A",
-          content:
-            "Urychlení hodinové frekvence tak, že se jednotlivé bloky proudového zpracování rozdělí na několik menších, které trvají kratší dobu. Instrukce sice bude muset projít více bloky, které ale trvají kratší dobu, což v důsledku povede k urychlení.",
-          correct: true,
-        },
-        {
-          code: "B",
-          content:
-            "Zavedením paměti cache, do které se ukládají nejčastěji použitá data a instrukce tak, že při opětovném přístupu, případně přístupu k datům uloženým blízko k těmto datům, se zkrátí doba přístupu do paměti na mnohem kratší.",
-          correct: false,
-        },
-        {
-          code: "C",
-          content:
-            "Zavedením vektorové jednotky, která umožní zpracovávat data instrukcí po blocích (vektorech), a tím se dosáhne urychlení.",
-          correct: false,
-        },
-        {
-          code: "D",
-          content:
-            "Několikanásobného paralelního proudového zpracování (počet cyklů na instrukci může být i menší než 1).",
-          correct: false,
-        },
-      ],
-      category: "Počítačová architektura – pipeline",
-      explanation:
-        "Superpipeline zvyšuje výkon dělením instrukcí do více dílčích fází, které se zpracovávají rychleji díky zkrácenému trvání každé fáze. Toho je dosaženo zvýšením hodinové frekvence a jemnější granularitou pipeline.",
-    },
-    {
       code: "Q1222",
       content: "AES je standard pro",
       options: [

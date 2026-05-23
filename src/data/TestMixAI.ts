@@ -1209,11 +1209,11 @@ const TestMixAI: Test = {
       content:
         "Kolik existuje inverzí (permutací) 5 prvků, které nemají žádnou fixní pozici (tzv. derangement)?",
       options: [
-        { code: "A", content: "44", correct: false },
+        { code: "A", content: "44", correct: true },
         { code: "B", content: "45", correct: false },
-        { code: "C", content: "44? = 44", correct: false },
-        { code: "D", content: "44", correct: false },
-        { code: "E", content: "44", correct: false },
+        { code: "C", content: "40", correct: false },
+        { code: "D", content: "120", correct: false },
+        { code: "E", content: "24", correct: false },
       ],
       category: "Diskrétní matematika – permutace",
       explanation:
@@ -2207,19 +2207,10 @@ const TestMixAI: Test = {
       content:
         "Tabulka stránkování v architektuře s 12bitovým virtuálním adresním prostorem a 4 KB stránkami obsahuje:",
       options: [
-        { code: "A", content: "2^(12)/4096 = 1 vstup", correct: false },
-        { code: "B", content: "2^12 / 2^12 = 1 vstup", correct: false },
-        { code: "C", content: "2^(12−12) = 1 vstup", correct: false },
-        {
-          code: "D",
-          content: "2^12 / 2^12 = 1 vstup (celé číslo)",
-          correct: false,
-        },
-        {
-          code: "E",
-          content: "2^12 / 2^12 = 1 vstup – nesmysl",
-          correct: false,
-        },
+        { code: "A", content: "1 vstup", correct: true },
+        { code: "B", content: "2 vstupy", correct: false },
+        { code: "C", content: "12 vstupů", correct: false },
+        { code: "D", content: "4096 vstupů", correct: false },
       ],
       category: "Počítačová architektura – stránkování",
       explanation:

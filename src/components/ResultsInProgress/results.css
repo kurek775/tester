@@ -25,6 +25,10 @@
     color: #4caf50;
 }
 
+.partial {
+    color: #ff9800;
+}
+
 .incorrect {
     color: #f44336;
 }
@@ -57,4 +61,8 @@
 
 .dot.incorrect {
     background: #f44336;
+}
+
+.dot.partial {
+    background: #ff9800;
 }

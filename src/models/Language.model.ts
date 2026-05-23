@@ -3,6 +3,7 @@ export interface Language {
   testTitle: string;
   incorrect: string;
   correct: string;
+  partial: string;
   submit: string;
   submitQuestion: string;
   next: string;
@@ -11,4 +12,11 @@ export interface Language {
   startTest: string;
   continueTest: string;
   attemps: string;
+  studyGuide: string;
+  guideIntro: string;
+  questionsWord: string;
+  correctAnswer: string;
+  back: string;
+  byRoi: string;
+  areaNotFound: string;
 }

@@ -9,7 +9,9 @@ import { useNavigate, useParams } from "react-router-dom";
 import Header from "../../components/Header";
 import {
   getInProgressTestResults,
+  getTestQuestionSet,
   saveCompletedTestResults,
+  saveTestQuestionSet,
 } from "../../components/utils/LocalStorage.utils";
 import type { Test } from "../../models/Test.model";
 
@@ -21,14 +23,24 @@ const TestPage: React.FC = () => {
   const [completed, setCompleted] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [answers, setAnswers] = useState<
-    { correct: boolean | null; answered: boolean }[]
+    { score: number | null; answered: boolean }[]
   >([]);
 
   useEffect(() => {
     if (file) {
       import(`../../data/${file}.ts`)
         .then((module) => {
-          setTestData(module.default);
+          const loaded: Test = module.default;
+          // Reuse the question set the test was started with (if any) so refreshing
+          // or returning never reshuffles/re-selects questions out from under the
+          // saved answers. Only pin a fresh set the first time the test is opened.
+          const savedSet = getTestQuestionSet(loaded.code);
+          if (savedSet && savedSet.length) {
+            setTestData({ ...loaded, questions: savedSet });
+          } else {
+            saveTestQuestionSet(loaded.code, loaded.questions);
+            setTestData(loaded);
+          }
         })
         .catch((err) => {
           console.error("Failed to load test file:", err);
@@ -37,18 +49,20 @@ const TestPage: React.FC = () => {
     }
   }, [file]);
 
-  const handleAnswer = (isCorrect: boolean) => {
+  const handleAnswer = (score: number) => {
     const updated = [...answers];
-    updated[currentIndex] = { correct: isCorrect, answered: true };
+    updated[currentIndex] = { score, answered: true };
     setCompleted(updated.filter((v) => v.answered).length === answers.length);
     setAnswers(updated);
   };
 
   const handleSubmit = () => {
     if (testData) {
-      const correct = answers.filter((v) => v.correct).length;
+      const totalScore = answers.reduce((sum, v) => sum + (v.score ?? 0), 0);
       const percentage =
-        answers.length > 0 ? Math.round((correct / answers.length) * 100) : 0;
+        answers.length > 0
+          ? Math.round((totalScore / answers.length) * 100)
+          : 0;
       saveCompletedTestResults(testData.code, percentage);
       navigate("/");
     }
@@ -61,7 +75,7 @@ const TestPage: React.FC = () => {
 
   useEffect(() => {
     if (testData) {
-      let lastIndex = 0;
+      let lastIndex = -1;
       const resultsFromLocalStorage = getInProgressTestResults(testData.code);
       if (resultsFromLocalStorage) {
         const answersInProgress = testData.questions.map((v, i) => {
@@ -71,14 +85,22 @@ const TestPage: React.FC = () => {
           if (answer) {
             lastIndex = i;
             return {
-              correct: answer.correct,
+              // Fall back to correct→1/0 for progress saved before scores existed.
+              score: answer.score ?? (answer.correct ? 1 : 0),
               answered: true,
             };
           }
-          return { correct: null, answered: false };
+          return { score: null, answered: false };
         });
         setAnswers(answersInProgress);
-        setCurrentIndex(lastIndex == 0 ? 0 : lastIndex + 1);
+        const answeredCount = answersInProgress.filter((a) => a.answered).length;
+        setCompleted(
+          answeredCount > 0 && answeredCount === answersInProgress.length
+        );
+        // Resume on the question after the last one answered, clamped so it can
+        // never point past the end (which previously crashed the page on refresh).
+        const nextIndex = lastIndex < 0 ? 0 : lastIndex + 1;
+        setCurrentIndex(Math.min(nextIndex, testData.questions.length - 1));
       }
     }
   }, [testData]);
@@ -98,6 +120,7 @@ const TestPage: React.FC = () => {
         <div className="question-wrapper">
           <div className="test-question">
             <Question
+              key={currentIndex}
               code={testData.code}
               question={testData.questions[currentIndex]}
               onAnswerResult={handleAnswer}
@@ -118,7 +141,7 @@ const TestPage: React.FC = () => {
         </div>
         <div className="explanation-wrapper rounded">
           {testData.questions[currentIndex].explanation &&
-            answers[currentIndex]?.correct !== null && (
+            answers[currentIndex]?.answered && (
               <ExplanationBox
                 explanation={testData.questions[currentIndex].explanation!}
               />

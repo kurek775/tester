@@ -207,7 +207,7 @@ const PredikatyLogika: Test = {
         { code: "A", content: "(∃x)(p(x) ∧ ¬q(x))", correct: true },
         { code: "B", content: "(∀x)(¬q(x) ⇒ ¬p(x))", correct: false },
         { code: "C", content: "(∀x)(¬p(x) ∨ q(x))", correct: false },
-        { code: "D", content: "(∃x)(p(x) ∧ ¬q(x))", correct: true },
+        { code: "D", content: "(∃x)(¬p(x) ∧ q(x))", correct: false },
       ],
       category: "Predikátová logika",
       explanation:

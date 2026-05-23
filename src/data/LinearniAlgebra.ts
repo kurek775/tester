@@ -100,31 +100,6 @@ const LinearniAlgebra: Test = {
         "Použijeme eukleidovskou normu: ||u − v|| = √((4−7)² + (3−3)² + (−8+4)²) = √(9 + 0 + 16) = √25 = 5.",
     },
     {
-      code: "Q48",
-      content: "Hodnost matice je rovna:",
-      options: [
-        {
-          code: "A",
-          content: "počtu lineárně závislých sloupců matice",
-          correct: false,
-        },
-        {
-          code: "B",
-          content: "dimenzi lineárního obalu sloupců matice",
-          correct: false,
-        },
-        { code: "C", content: "počtu řádků matice", correct: false },
-        {
-          code: "D",
-          content: "dimenzi lineárního obalu řádků matice",
-          correct: true,
-        },
-      ],
-      category: "Lineární algebra – hodnost",
-      explanation:
-        "Hodnost matice je definována jako dimenze vektorového prostoru generovaného řádky matice, tedy dimenze lineárního obalu řádků.",
-    },
-    {
       code: "Q49",
       content: "Pro součiny čtvercových matic A, B, C ∈ ℝ^{n×n} neplatí:",
       options: [
@@ -312,7 +287,7 @@ const LinearniAlgebra: Test = {
         {
           code: "A",
           content:
-            "Pro a = 1 je |A| = 36. |A| = 0 pro a = 4, 11, 18, 25, 32, 39.",
+            "Pro a = 1 je |A| = 24. |A| = 0 pro a = 5, 12, 19, 26, 33, 40.",
           correct: false,
         },
         {
